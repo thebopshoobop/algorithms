@@ -1,0 +1,25 @@
+{
+  "name": "algorithms",
+  "version": "0.0.1",
+  "description": "### Python tests are written with [pytest](https://docs.pytest.org/en/latest/)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./node_modules/jasmine/bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebopshoobop/algorithms.git"
+  },
+  "author": "Will Timpson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebopshoobop/algorithms/issues"
+  },
+  "homepage": "https://github.com/thebopshoobop/algorithms#readme",
+  "dependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
