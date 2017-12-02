@@ -6,8 +6,9 @@ from random import randint
 import pytest
 
 from algorithms.src.merge_sort import merge_sort
+import algorithms.src.quick_sort as quick_sort
 
-sorts = [merge_sort]
+sorts = [merge_sort, quick_sort.out_of_place, quick_sort.in_place]
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ const merge_sort = sample => {
     return sample;
   }
 
-  const pivot = Math.floor(Math.random() * sample.length);
+  const pivot = Math.floor(sample.length / 2);
   const left = merge_sort(sample.slice(0, pivot));
   const right = merge_sort(sample.slice(pivot));
   let [lCurrent, rCurrent] = [0, 0];
