@@ -2,12 +2,12 @@
 the input array and merging the results."""
 
 
-def merge_sort(sample):
+def out_of_place(sample):
     if len(sample) < 2:
         return sample
 
     pivot = len(sample) // 2
-    left, right = map(merge_sort, [sample[:pivot], sample[pivot:]])
+    left, right = map(out_of_place, [sample[:pivot], sample[pivot:]])
     l_current = r_current = 0
     l_max, r_max = map(len, [left, right])
 
@@ -26,3 +26,28 @@ def merge_sort(sample):
         merged.extend(right[r_current - r_max:])
 
     return merged
+
+
+def in_place(sample):
+    alt = [s for s in sample]
+    return in_place_merge(alt, sample, 0, len(sample))
+
+
+def in_place_merge(sample, alt, left, right):
+    if right - left < 2:
+        return sample
+
+    pivot = (right - left) // 2 + left
+    in_place_merge(alt, sample, left, pivot)
+    in_place_merge(alt, sample, pivot, right)
+
+    l, r = left, pivot
+    for c in range(left, right):
+        if l < pivot and (r >= right or sample[l] <= sample[r]):
+            alt[c] = sample[l]
+            l += 1
+        else:
+            alt[c] = sample[r]
+            r += 1
+
+    return alt

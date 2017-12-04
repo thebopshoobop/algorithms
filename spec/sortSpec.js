@@ -1,7 +1,12 @@
 const mergeSort = require("../src/mergeSort");
 const quickSort = require("../src/quickSort");
 
-const sorts = [mergeSort, quickSort.outOfPlace, quickSort.inPlace];
+const sorts = [
+  mergeSort.outOfPlace,
+  mergeSort.inPlace,
+  quickSort.outOfPlace,
+  quickSort.inPlace
+];
 
 const verify = (output, result) => {
   if (result.length !== output.length) {
